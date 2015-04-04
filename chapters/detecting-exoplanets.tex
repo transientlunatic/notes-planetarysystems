@@ -126,6 +126,242 @@ of the Lambertian surface,
   F~L(\alpha=0) = \frac{4}{4 \pi \Delta^2} \pi R~p^2 F_{\sun} \frac{R_{\sun}^2}{r^2} 
 \end{equation}
 since $A=1$. The ratio of these two gives $\frac{F}{F~L} = p$.
+
+\section{Astrometric detection}
+\label{sec:astr-detect}
+
+As a planet orbits a star the mutual gravitational force causes the
+two to orbit a mutual barycentre, and as such, the star appears to
+wobble from side to side. The motion of a single planet about a star
+causes the star to undergo a reflex circular orbit about the
+barycentre with a radius
+\[ a~s = a \frac{M~p}{M~s} \] This results in periodic perturbation of
+the radial velocity, astrometric position, and time of arrival of
+periodic signals.
+
+The Keck telescopes are capable of detecting the position of a star to
+within $20\,\micro\text{as}$, which allows the barycentric motion to
+be detected. The radius of the orbit about the barycentre for the star is
+\begin{equation}
+  \label{eq:26}
+  r~s = r \qty( \frac{m~p}{m~s + m~p} ) \approx r \qty( \frac{m~p}{m~s})
+\end{equation}
+Thus, at a distance $d$ this will produce an angular movement of 
+\begin{equation}
+  \label{eq:27}
+  \Delta \theta = \frac{r~s}{d} = \frac{r}{d} \frac{m~p}{m~s}
+\end{equation}
+Defining the mass ratio, $q = m~p/m~s$, then
+\begin{equation}
+  \label{eq:28}
+  \Delta \theta = 0.5 \qty( \frac{q}{10^{-3}}) \qty( \frac{r}{5\,\text{AU}} ) \qty( \frac{d}{10\,\text{pc}})^{-1} \,\milli\text{as}
+\end{equation}
+This method has the advantage of being able to estimate the mass of a
+planet, and is complementary to the spectroscopic method, as it works
+best for face-on systems. It is also ideal for detecting planets with
+long orbital periods. On the other hand, achieving the required
+precision is difficult, and the method is highly sensitive to the
+distance to the parent star. There are also periodic shifts in a
+star's apparent centroid position due to dark regions on its surface,
+so long observation times are needed to confirm a detection.
+
+\section{Radial velocity}
+\label{sec:radial-velocity}
+
+In a system where the planet and star are, respectively at a distance
+$r~p$ and $r~s$ from the barycentre the period will be
+\[ P = \frac{2 \pi r~p}{v~p} = \frac{2 \pi r~s}{v~s} \] where $v~p$
+and $v~s$ are the respective velocities. From conservation of momentum 
+\[ M~p v~p = M~s v~s \] and so
+\[ v~s = \frac{M~p}{M~s} \frac{2 \pi r~p}{P} \]
+and since the line of sight may be inclined,
+\[ v~r = v~s \sin(i) = \frac{M~p}{M~s} \frac{2 \pi r~p}{P} \sin(i) \]
+is the radial velocity.
+
+Recalling Kepler's third law,
+\[ P^2 = \frac{4 \pi^2}{G(M~p + M~s)} r~p^3 \]
+and so long as $M~p \ll M~s$,
+\[ r~p \approx \qty( \frac{G M~s}{4 \pi^2} P^2 )^{\frac{1}{3}} \]
+and therefore
+\begin{equation}
+  \label{eq:12}
+  v~r = \qty( \frac{2 \pi G}{P})^{\frac{1}{3}} \frac{M~p}{M~s^{\frac{2}{3}}} \sin(i)
+\end{equation}
+
+The radial velocity can be measured from the Doppler shift of the
+radiation from the star, and it is then possible to measure the
+quantity $M~p \sin(i)$ for $i$ the inclination of the planet's
+orbit. In the most general case the velocity amplitude, $K$, is
+\begin{equation}
+  \label{eq:18}
+  K = \qty( \frac{2 \pi G}{P})^{\frac{1}{3}} \frac{M~p \sin(i)}{(M~p + M~s)^{\frac{2}{3}}} \frac{1}{(1-e^2)^{\half}}
+\end{equation}
+The star's mass can be estimated from the mass-luminosity
+relationship, and once the distance to the star has been determined
+(by parallax) the luminosity can be determined.
+
+In absence of other constraints on the orbital inclination, radial
+velocity searches can provide lower limits on the planetary masses of
+a system. The magnitude of the radial velocity of the sun due to
+Jupiter is around $12.5\,\meter/\second$, but due to the Earth is
+$0.1\,\meter/\second$. The limit measurable by current instrumentation
+is around $1\,\meter/\second$.
+
+This method has the advantages of being independent of the distance to
+the star, and the mass, period, and orbital elements of the planet can
+be determined. It has the disadvantage of the inability to measure
+$\sin(i)$ causing only the lower mass limit to be observable, thanks
+to the SNR considerations around bright stars. Elliptical orbits
+complicate the mathematics, as do multiple planet systems, and stellar
+pulsations.
+
+\section{Planetary transits}
+\label{sec:planetary-transits}
+
+A growing number of extra-solar planets are detected by the transit
+method, whereby the photometric effect of the planet passing over the
+star's disk is recorded. The dip in intensity is related to the area
+of the two disks,
+\begin{equation}
+  \label{eq:19}
+  \Delta I \propto \qty( \frac{R~p}{R~s} )^2
+\end{equation}
+for $R~p$ the radius of the planet and $R~s$ the radius of the star,
+so a planet the size of Jupiter is likely to cause a 1\% drop in
+intensity, whereas the Earth would only produce a 0.01\% drop.
+
+The reduction in brightness can be found as the ratio of the
+brightness during the transit to that outside the transit.
+\begin{equation}
+  \label{eq:20}
+  \frac{B~s \pi (R~s^2 - R~p^2)}{B~s \pi R~s^2} = 1 - \qty( \frac{R~p}{R~s} )^2
+\end{equation}
+for $B~s$ the brightness of the star, and the fractional change,
+$\Delta$ is then
+\begin{equation}
+  \label{eq:21}
+  \Delta = \qty( \frac{R~p}{R~s} )^2
+\end{equation}
+
+The first transit observed was of a planet around HD\,209458, which
+had a 2.5\,hour transit time. This method allows the radius of the
+planet to be measured easily, and allows a simultaneous scan of a
+large fraction of the sky, and allows the atmospheres of planets, and
+satellites, to be studied. It does however, require a good alignment
+between the planets' orbital plane and the observer, and produces a
+high rate of false detections.
+
+In order to determine the orbital period we can turn to Kepler's third
+law. The radius of the star can be estimated from the star's spectral
+classification, allowing the planet's radius to be estimated. Along
+with the mass of the star and the period it is possible to find the
+planet's orbital radius.
+
+\begin{figure}[b]
+  \centering
+  \begin{tikzpicture}[]
+	\draw [ultra thick] ( 0,0) circle (3);
+	\draw [ultra thick] (30:4) circle (1);
+	\draw [dotted]   (30:4) -- (150:4);
+	\draw [|<->|, ultra thick]     (-3.5, 2.3) -- (3.5,2.3) node [midway, above] {$D$};
+	\draw (0, 0) -- (0,2) node [midway, left] {$a \cos(i)$};
+	\draw (0,0) -- (30:4) node [midway, right, fill=white] {$R_*$};
+\end{tikzpicture}
+  \caption{The geometrical configuration of the transit.}
+  \label{fig:transit-geometry}
+\end{figure}
+
+A transit will begin when the projected radius of the planet touches
+the edge of the parent star, and lasts for a duration $\tau$ which is
+a fraction of the total orbital period, and so the distance is a chord
+of length
+\begin{equation}
+  \label{eq:22}
+  D = 2 a \sin( \half \frac{2 \pi}{P} \tau) = 2 \sqrt{( R_{*} + R~p)^2 - a^2 \cos[2](i)}
+\end{equation}
+and so
+\begin{equation}
+  \label{eq:23}
+  \tau = \frac{P}{\pi} \asin( \frac{\sqrt{(R_{*}+R~p)^2 - a^2 \cos[2](i)}}{a} )
+\end{equation}
+\begin{figure}[b]
+  \centering
+  \begin{tikzpicture}[]
+	\draw [ultra thick] (6,0) circle (2);
+	\draw [ultra thick] (6,2) -- (6,-2);
+	\draw [dotted]   (0,1) -- (4.25,1);
+	\draw [dotted]   (0,0) -- (6,0);
+	\draw [<->]      (1,0) -- (1,1) node [midway, left] {$h$};
+	\fill (1,1) circle (0.2);
+	\draw [thick, <->] (1,1) -- (6,0) node [midway,fill=white] {$a_{\rm pl}$};
+	\draw [->] (1,0.6) to [bend right] (1.4,0.9) node [below] {$i$};
+\draw (6,0) -- (4.25,1);
+\draw [->] (5, 0) to [bend left] (5.2, 0.47) node [left] {$\delta$};
+\end{tikzpicture}
+  \caption{The transit geometry, side-on.}
+  \label{fig:transit-geometry-2}
+\end{figure}
+This can also be described, using the geometry of figure
+\ref{fig:transit-geometry-2} as
+\begin{align*}
+  \label{eq:24}
+  \tau &= \frac{P}{\pi} \qty( \frac{R_{*} \cos(\delta) + R~p}{a} ) \\ &\approx 13 \qty( \frac{M_{*}}{M_{\odot}})^{-\half} \qty( \frac{1}{1\,\text{AU}} )^{\half} \qty( \frac{R_{*}}{R_{\odot}} )
+\end{align*}
+We find that the appropriate transit period is around 13 hours and 25
+hours for Jupiter.
+
+In order to view a transit the inclination of the system must
+satisfy \[ \cos(i) \le \frac{(R~p + R~s)}{a} \] and the probability of
+viewing a transit for the system is
+\begin{equation}
+  \label{eq:25}
+  P(\text{transit}) = \frac{\int_0^{(R~p+R~s)/a} \dd{\cos(i)}}{\int_0^1 \dd{\cos(i)}} = \frac{R~p + R~s}{a} \approx \frac{R~s}{a}
+\end{equation}
+
+\section{Gravitational microlensing}
+\label{sec:grav-micr}
+
+If a planet aligns precisely with the line-of-sight then the image of
+the star will be deformed into a circle with a radius
+\begin{equation}
+  \label{eq:30}
+  \theta~E = \sqrt{ \frac{4 G M~L}{c^2 D~L} \frac{(D~S - D~L}{D~S}} }
+\end{equation}
+This comes from the angle of deviation caused by the lens,
+\begin{equation}
+  \label{eq:29}
+  \alpha = \frac{4 G M~L}{c^2 r} = \frac{2 R~s}{r}
+\end{equation}
+for $R~s$ the Shcwarzschild radius, and $r$ the distance of closest
+approach, and $M~L$ is the mass of the lens. For a full derivation see
+notes on \textsc{General Relativity} for more information.
+
+The total magnification, $A$, which is produced is
+\begin{equation}
+  \label{eq:31}
+  A = \frac{u^2 + 2}{u \sqrt{u^2 + 4}}
+\end{equation}
+where $u = \theta~s / \theta~E$ is a dimensionless unit representing
+the source-lens separation in units of the Einstein radius. The
+characteristic time of a lensing event is
+\begin{equation}
+  \label{eq:32}
+  t~E = 69.9 \qty( \frac{M~L}{M_{\odot}} )^{\half} \qty( \frac{D~S}{8\,\kilo\text{pc}})^{\half} \qty[ (1-d)d]^{\half} v^{-1}_{200}\,\text{days}
+\end{equation}
+
+\textbf{A better description is contained in Dominik and Sahu, worth
+  writing up from there.}
+
+This method has the advantage of allowing the detection of Earth-like
+planets, and allows a distribution of planetary systems to be
+measured. Unfortunately lensing is a one-off process, and planets are
+distant, so follow-up observations are implausible.
+
+\section{Pulsar timing}
+\label{sec:pulsar-timing}
+
+
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../project"
