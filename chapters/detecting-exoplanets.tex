@@ -165,6 +165,19 @@ distance to the parent star. There are also periodic shifts in a
 star's apparent centroid position due to dark regions on its surface,
 so long observation times are needed to confirm a detection.
 
+\subsection{Surveys}
+\label{sec:surveys-2}
+
+\begin{description}
+\item[Carnegie] The CAPSCam instrument at La Campanas, Chile has a
+  $0.25\,\milli\text{as}/\text{hour}$ sensitivity, allowing a search
+  for Jupiter-sized planets around the nearest 100 low-mass stars.
+\item[GAIA] GAIA has a sensitivity of $25\,\micro\text{as}$ on average
+  over its bandpass, and will monitor $1\e{9}$ stars, and can identify
+  Jupiter-like planets at semi-major axes of $3\,\text{AU}$ and
+  greater.
+\end{description}
+
 \section{Radial velocity}
 \label{sec:radial-velocity}
 
@@ -214,6 +227,30 @@ $\sin(i)$ causing only the lower mass limit to be observable, thanks
 to the SNR considerations around bright stars. Elliptical orbits
 complicate the mathematics, as do multiple planet systems, and stellar
 pulsations.
+
+\subsection{Surveys}
+\label{sec:surveys-1}
+
+Three major radial velocity searches have been carried out.
+\begin{description}
+\item[HARPS] The High Accuracy Radial velocity Planetary Search is
+  carried out by a spectrograph at Paranal, Chile, and is capable of
+  detecting radial velocities as small as $\approx
+  0.9\,\meter/\second$, which is sensitive to Earth-like
+  planets. Gliese 581e was discovered by this survey, and is in a
+  system orbiting a red dwarf 20\,ly away, with at least 6
+  planets. The e planet is estimated to have a mass of around
+  $1.7\,M~E$, while the g planet is in the habitable zone with a mass
+  of $3.1\,M~E$.
+\item[SOPHIE] This is a high resolution spectrograph at
+  Haute-Provence, France, capable of observing radial velocities as
+  small as $2\,\meter/\second$, and is used to follow-up Kepler
+  objects of interest.
+\item[Keck] The HIRES instrument on the Keck telescopes is attributed
+  with having discovered more exoplanets than any other instrument
+  prior to Kepler. It measures radial velocities around
+  $1\,\meter/\second$.
+\end{description}
 
 \section{Planetary transits}
 \label{sec:planetary-transits}
@@ -318,6 +355,22 @@ viewing a transit for the system is
   P(\text{transit}) = \frac{\int_0^{(R~p+R~s)/a} \dd{\cos(i)}}{\int_0^1 \dd{\cos(i)}} = \frac{R~p + R~s}{a} \approx \frac{R~s}{a}
 \end{equation}
 
+\subsection{Surveys}
+\label{sec:surveys-3}
+
+\begin{description}
+\item[SuperWASP] This is the UK's leading wide-field exoplanet
+  detection programme, which has been operating since 2004, and has
+  discovered around 100 planets, using off-the-shelf Canon 200mm
+  lenses, and science-grade CCDs.
+\item[CoRoT] The Convection, Rotation, and Transits mission was
+  dedicated to asteroseismology, and the discovery of exoplanets. It
+  ran from 2006 to 2013, and detected 29 exoplanets.
+\item[Kepler] Kepler has a specially-designed 0.95 meter mirror
+  equipped for precise photometry, and by the end of 2014 had
+  identified 989 planets, and an additional 4234 candidates.
+\end{description}
+
 \section{Gravitational microlensing}
 \label{sec:grav-micr}
 
@@ -357,10 +410,74 @@ planets, and allows a distribution of planetary systems to be
 measured. Unfortunately lensing is a one-off process, and planets are
 distant, so follow-up observations are implausible.
 
+% \subsection{Surveys}
+% \label{sec:surveys-4}
+
+% A number of microlensing surveys have exoplanet detection as a main or secondary aim, including $\mu$FUN-PLANET, RoboNETII, MOA, and OGLE.
+
 \section{Pulsar timing}
 \label{sec:pulsar-timing}
 
+By observing the timing residuals from pulsars it is possible to
+distinguish periodic signals which correspond to orbiting bodies. The
+first exoplanet discovered in this manner was in 1992 about the
+millisecond pulsar PSR\,1257+12. Timing irregularities can be caused
+by a number of effects other than just planets, however, including
+seismic effects on the star, propagation effects, and other
+relativistic effects.
 
+A planet in a circular orbit will produce a timing residual of
+\begin{equation}
+  \label{eq:33}
+  \tau~p = 1.2 \qty( \frac{M~p}{M~E} ) \qty( \frac{P}{1\,\text{year}})^{2/3}\,\milli\second
+\end{equation}
+which, combined with the inclination of the orbit allows a limit to be
+placed on the mass,
+\begin{equation}
+  \label{eq:34}
+  M~p \sin(i) \le 0.815 M~E \tau~p P^{-2/3}
+\end{equation}
+
+\subsection{The PSR\,1257+12 system}
+\label{sec:psr-1257+12-system}
+
+The first planetary system discovered around a pulsar was annnounced
+in 1992 \cite{1992Natur.355..145W}, using a modified version of
+\texttt{TEMPO} to fit out Keplerian orbital parameters in the TOAs
+from the pulsar.
+\begin{table}[b]
+  \centering
+  \begin{tabular}{l ccc}
+\toprule
+    Parameter        & Planet A  & B          & C          \\
+\midrule
+Semi-m axis (AU) & 0.19      & 0.36       & 0.46       \\
+Mass ($M_{\oplus}$)  & 0.020     & 4.3        & 3.9        \\
+Period (days)        & 25.262(3) & 66.5419(1) & 98.2114(2) \\
+Eccentricity         & 0.0       & 0.0186(2)  & 0.0252(2)\\
+\bottomrule
+  \end{tabular}
+  \caption{The orbital and physical parameters of the planets of the PSR\,1257+12 system. \cite{2003ApJ...591L.147K}}
+  \label{tab:pulsar-planets}
+\end{table}
+The planets in the system are believed to have formed in a secondary
+period of planet formation. The simplest model would be to assume that
+the planets had survived not only the initial supernova which created
+the pulsar, and its preceding red giant phase, but also the kick
+velocity given to the neutron star is configured correctly so as to
+not escape the planets. This model is complicated, and improbable,
+requiring mechanisms to shrink the planetary orbits.
+
+A second model has the planets captured by the pulsar, but collisions
+between neutron stars and main sequence stars are improbable, and only
+around 100 are believed to have happened in the lifetime of the
+Galaxy, although are thought to be the source of LMXBs in globular
+clusters. This model also doesn't provide a mechanism to spin-up the
+millisecond pulsar.
+
+The leading candidate then implies that the planets are the remains of
+a disrupted companion, which caused the spin-up of the pulsar
+\cite{1993ASPC...36..149P}.
 
 %%% Local Variables: 
 %%% mode: latex
