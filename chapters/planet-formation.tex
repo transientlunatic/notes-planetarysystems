@@ -1,0 +1,122 @@
+In our Solar System all of the planets orbit anticlockwise, with the
+sun rotating in the same direction, and all of the orbital planes are
+close to coplanar (except Mercury). Their orbits are very close to
+circular (except Mercury, with $e=0.2$), and with the exception of
+Venus and Uranus, they all rotate anticlockwise. Each planet is
+approximately twice the distance from the sun of the previous one, and
+most satellites orbit anticlockwise.
+
+\section{The nebular hypothesis}
+\label{sec:nebular-hypothesis}
+
+In the nebular hypothesis the sun and planets formed from a cloud of
+interstellar material, with the sun forming at the centre of a
+flattened high density region. The planets then form out of the
+remainder of the cloud. There are a number of questions arising from
+this idea though. How does a lat solar system form, and how do the
+planets form?
+
+The Jeans criterion states that compressive perturbations of a gas
+with uniform density, $\rho$, and sound speed $c~s$ over distances
+greater than the Jeans length, $\Lambda$,
+\begin{equation}
+  \label{eq:35}
+  \Lambda = \qty( \frac{\pi c~s^2}{G \rho})^{\half}
+\end{equation}
+where $G$ is the gravitational constant. For a one solar mass cloud
+core with a temperature of $10\,\kelvin$ and a radius of
+$0.1\,\text{pc}$ this occurs over a timescale of around one million
+years
+
+Radio measurements of gas clouds show that they do possess angular
+momentum, and have rotational periods of around 20 million years. The
+centrifugal force per unit mass of the gas is then $j^2/r^3$, for $r$
+the distance from the axis, and so the elements are balanced within a
+disk.
+
+\section{Evolution of  astellar nebula}
+\label{sec:evol-astell-nebula}
+
+Consider the condition for centrifugal balance,
+\begin{equation}
+  \label{eq:36}
+  \frac{j^2}{r^3} = \pdv{\Phi}{r}
+\end{equation}
+where the gravitational force is 
+\[ - \pdv{\Phi}{r} \]
+so the energy of an element of gas, per unit mass, is
+\begin{equation}
+  \label{eq:37}
+  E = \frac{j^2}{2r^2} + \Phi
+\end{equation}
+Thus the change of total energy due to interaction between two gas
+elements is
+\begin{equation}
+  \label{eq:38}
+  \dd{E} = \frac{j_1 \dd{j_1}}{r^2} - \frac{j_1^2 \dd{r_1}}{r_1^3} + \dd{\Phi_1} + \frac{j_2 \dd{j_2}}{r^2} - \frac{j_2^2 \dd{r_2}}{r_2^3} + \dd{\Phi_2}
+\end{equation}
+Considering the conservation of momentum, and the balance of forces,
+\begin{equation}
+  \label{eq:39}
+  \dd{E} = \qty( \frac{j_1}{r^2} - \frac{j_2}{r^2} )\dd{j_1} = \qty( \Omega_1 - \Omega_2 ) \dd{j_1}
+\end{equation}
+Planets form through a multi-step process, with solid grins condensing
+out of the gas of the nebula, which accrete into larger bodies:
+planetesimals, which then collide and coalesce to form protoplanets.
+
+Dust particles then start to settle into the plane of the
+protoplanetary disk, with the gravitational force in the $z$-direction
+being
+\begin{equation}
+  \label{eq:40}
+  \frac{GM m~g z}{R^3}
+\end{equation}
+where $R$ is the distance of the grain from the star, and $m~g$ is its
+mass. The angular velocity will then be
+\begin{equation}
+  \label{eq:41}
+  \Omega^2 = \frac{GM}{R^3}
+\end{equation}
+so the acceleration on each grain is
+\begin{equation}
+  \label{eq:42}
+  g_z = \Omega^2 z
+\end{equation}
+
+As each dust particle falls towards the centre of the disk it
+experiences drag from the gas it travels through. For a spherical
+particle of radius $a$ travelling at a velocity $v$ through a gas of
+density $\rho$ this drag is
+\begin{equation}
+  \label{eq:43}
+  F~{drag} = \pi a^2 \rho c~s v
+\end{equation}
+for $c~s$ the sound speed of the gas. The equation of motion for the
+grain is then
+\begin{align}
+  m~g \dv{v}{t} &= F~{drag} - m~g g_z \\
+\frac{4 \pi a^3 \rho~g}{3} \dv{v}{t} &= \pi a^2 \rho c~s v - \frac{4 \pi a^3 \rho~g}{3} \Omega^2 z
+\end{align}
+for grains of density $\rho~g$.
+
+At some point the grain will reach a terminal velocity, when its
+acceleration reaches $0$, so
+\begin{equation}
+  \label{eq:44}
+  v = \frac{4 a \rho~g \Omega^2 H}{3 \rho c~s} \sim \frac{4 a \rho~g \Omega}{3 \rho} \sim \frac{8 a \rho~g \Omega H}{3 \Sigma}
+\end{equation}
+for $z=H$, the scale height of the disk from its mid-point, an
+isothermal sound speed, $c~s \approx H \Omega$, and $\Sigma$ the
+surface density, $\Sigma = 2 H \rho$. The settling time is then
+\begin{equation}
+  \label{eq:45}
+  \tau~s \sim \frac{H}{v} \sim \frac{3 \Sigma}{8 a \rho~g \Omega} \sim \frac{\Sigma}{16 a \rho~g}\,\text{orbits}
+\end{equation}
+For $\Sigma \sim 10^3\,\kilogram\,\meter^{-2}$, $\rho~g \sim
+10^3\,\kilogram\,\meter^{-3}$, $a = 10^{-5}\,\meter$, we get $10^4$
+orbits, or $10^5$ years at a distance $5\,\text{AU}$.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

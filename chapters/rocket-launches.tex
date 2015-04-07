@@ -1,0 +1,98 @@
+
+\section{Vertical motion against gravity}
+\label{sec:vert-moti-against}
+
+Consider a rocket with thrust velocity perpendicular to the
+gravitational field. The force equation  is
+\begin{equation}
+  \label{eq:1}
+  \dv{v}{t}= \frac{F-Mg}{M}
+\end{equation}
+For $Mg$ the instantaneous weight of the rocket. Hence
+\begin{equation*}
+  \label{eq:2}
+  \dv{v}{t} = -v~E \frac{\dot{M}}{M}-g
+\end{equation*}
+then
+\begin{equation*}
+  \dd{v} = - v~E \frac{\dd{M}}{M} - g \dd{t}
+\end{equation*}
+and integrating both parts from $t=0$ to $t$,
+\begin{equation*}
+  v(t) = - v~E \int_{M_0}^M \frac{\dd{M'}}{M'} - \int_0^t g \dd{t'}
+\end{equation*}
+Assuming that $g$ is constant over the flight,
+\begin{align*}
+  v(t) &= v~E \log( \frac{M_0}{M(t)} )-gt \\
+&= v~E \log(\frac{M_0}{M(t)}) - g \frac{M_0}{\dot{M}} \qty( 1 - \frac{M}{M_0})
+\end{align*}
+with the second part of the equation the gravity loss term.
+
+\section{Thrust-to-weight ratio}
+\label{sec:ttw-ratio}
+
+In order to optimise the amount of energy lost due to gravity we can
+consider the \emph{thrust-to-weight ratio}, 
+\begin{equation}
+  \label{eq:3}
+  \psi = \frac{F}{g M_0} = \frac{v~E \dot{M}}{g M_0}
+\end{equation}
+which allows us to write
+\begin{equation}
+  \label{eq:4}
+  \frac{v(t)}{v~E} = \log( \frac{M_0}{M(t)} ) - \frac{1}{\psi} \qty( 1 - \frac{M}{M_0} )
+\end{equation}
+
+\section{Vertical range}
+\label{sec:vertical-range}
+
+To calculate the vertical range of a rocket we proceed as before by
+integrating the velocity over $t$
+\begin{align*} 
+s &= \int v(t) \dd{t} = v~E \int_0^t \log( \frac{M_0}{M(t)} ) \dd{t} - \int_0^t g t \dd{t'} \\
+&=v~E \frac{M_0}{\dot{M}} \qty[ 1 - \frac{M}{M_0} \qty( \log( \frac{M_0}{M(t)}) + 1 ) ] - \half g t^2 \\
+&=v~E \frac{M_0}{\dot{M}} \qty[ 1 - \frac{M}{M_0} \qty( \log( \frac{M_0}{M(t)}) + 1 ) ] \\ & \quad- \frac{g}{2} \frac{M_0^2}{\dot{M}^2} \qty( 1 - \frac{M}{M_0})^2
+\end{align*} assuming $g$ is constant.
+
+\section{Launch aspects}
+\label{sec:launch-aspects}
+
+Consider the kinetic energy of the payload,
+\begin{align*}
+  \half M \Delta v^2 &= \half M v~E^2 \log^2\qty(\frac{M_0}{M}) \\ &= \half M v~E^2 \log^2\qty(R)
+\end{align*}
+For $R$ the rocket parameter. Normalising this by the rest-frame
+energy of the propellant in the rocket,
+\[ \half (M_0-M) v~E^2 \]
+we find the ratio
+\begin{equation}
+\label{eq:5} \phi(R) = \frac{M}{M_0-M} \log^2(R) = \frac{\log^2(R)}{R-1} 
+\end{equation}
+
+\begin{figure}[b]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[xmin=0, ymin=0, height = 5cm, width=\columnwidth, xlabel=$R$, ylabel=$\phi(R)$]
+      \addplot[mark=none, draw=muted-green, ultra thick, domain=1:10] {(ln(x)*ln(x))/(x-1)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{$\phi(R)$ as a function of the rocket parameter, $R$.}
+  \label{fig:rocket-ratio}
+\end{figure}
+
+By differentiating we find the optimal $R$ to be
+\begin{equation}
+  \label{eq:6}
+  \dv{\phi}{R} = 0 = - \frac{\log^2(R)}{(R-1)^2} + \frac{2 \log(R)}{R(R-1)}
+\end{equation}
+So the optimal $R = R~C$ satisfies
+\begin{equation}
+  \label{eq:7}
+  \log{R~C} = 2 - \frac{2}{R~C}
+\end{equation}
+so $R~C \approx 4.9$.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

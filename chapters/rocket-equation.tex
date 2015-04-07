@@ -1,0 +1,136 @@
+
+\section{Derivation of the rocket equation}
+\label{sec:deriv-rock-equat}
+
+In order to change its momentum a rocket ejects mass; the Tsiolkovsky
+rocket equation relates the complications of the changing mass and the
+rocket's dynamics.  To analyse the motion of the rocket we start at
+Newton's second law,
+\begin{equation}
+  \label{eq:10}
+  \sum_i F_i = \dv{p(t)}{t}
+\end{equation}
+In the case of a rocket both the mass and the momentum have a time
+dependence, and
+\begin{equation}
+  \label{eq:11}
+  \dv{p}{t} = \lim_{\Delta t \to 0} \qty( \frac{p_2 - p_1}{\Delta t} )
+\end{equation}
+Consider $p_1 = (m + \Delta m) V$, and $p_2 = m(V + \Delta v) + \Delta
+m V~e$, where $V~e$ is the velocity of the exhausted mass.
+
+In the frame of an observer,
+\[ V~e = V - v~e \]
+thus 
+\begin{align*}
+  p_2 - p_1 &= m(V + \Delta v) + \Delta m (V-v~e) - (m+\Delta m) V \\
+&= m \Delta v - \Delta m \ v~e
+\end{align*}
+let $\dd{m} = -\Delta m$, so
+\begin{align*}
+  \dv{p}{t} &= \frac{m \Delta v + v~e \dd{m}}{\Delta t} \\
+&= m \dv{v}{t} + v~e \dv{m}{t} = m \dot{v} + v~e \dot{m}
+\end{align*}
+Since there are no external forces, and assuming that $v~e$ is
+constant,
+\begin{align*}
+  F &= m \dot{v} + v~e \dot{m} = 0 \\
+m \dot{v} &= - v~e \dot{m} \\
+\Delta v &= \int v~e m \dd{m} 
+\end{align*}
+which gives
+\begin{fequation}[Tsiolkovsky rocket equation]
+  \label{eq:13}
+\label{eq:rocket-equation}
+  \Delta v= v~e \log( \frac{m_0}{m(t)} )
+\end{fequation}
+Now define the mass fraction as the proportion of the propellant which
+has been expended,
+\begin{definition}[Mass fraction]
+  \label{def:mass-fraction}
+  \[ M~f = 1 - \qty[ \frac{m(t)}{m_0}] \]
+\end{definition}
+
+\section{Thrust}
+\label{sec:thrust}
+
+If we make the assumption that $\dot{m}$ is constant, then
+\[ m(t) = m_0 - \dot{m} t \]
+and the total time for driven flight can then be found,
+\begin{equation}
+  \label{eq:14}
+  t = \frac{m_0 - m(t)}{\dot{m}} = \frac{m_0}{\dot{m}} \qty( 1 - \frac{m}{m_0}) = \frac{m_0}{\dot{m}} M~f
+\end{equation}
+hence the range of the rocket is
+\begin{align*}
+  s(t) &= \int_0^t v(t') \dd{t'}\\ &= v~e \int_0^t \log( \frac{m_0}{m_0 - \dot{m} t'} ) \dd{t'} \\ &= v~e \frac{m_0}{\dot{m}}
+\qty[\qty(1- \frac{\dot{m} t}{m_0}) \log( 1 - \frac{\dot{m} t}{m_0}) + \frac{\dot{m}}{m_0} t]\\
+& \text{since } m(t) = m = m_0 - \dot{m} t, 1- \dot{m} t / m_0 = m(t)/m\\
+&= v~e \frac{m_0}{\dot{m}} \qty[ \frac{m}{m_0} \log( \frac{m}{m_0}) +  1 - \frac{m}{m_0}] \\ 
+&= v~e \frac{m_0}{\dot{m}} \qty[ 1 - \frac{m}{m_0} \qty( \log(\frac{m}{m_0}) + 1 )]
+\end{align*}
+
+\section{Equations of motion}
+\label{sec:equations-motion}
+
+We now have a set of equations to describe the rocket's motion,
+\begin{align}
+  \label{eq:15}
+  v(t) &= v~e \log( \frac{m_0}{m} ) \\
+  \label{eq:16}
+  t &= \frac{m_0}{\dot{m}} M~f \\
+  \label{eq:17}
+  s(t) &= v~e \frac{m_0}{\dot{m}} \qty[1 - \frac{m}{m_0} \qty(\log( \frac{m}{m_0} )+1)] + v_i \frac{m_0}{\dot{m}} M~f
+\end{align}
+
+It is useful to define a new quantity here also:
+\begin{definition}[Specific Impulse]
+\label{def:specific-impulse}
+  \[ I~{sp} = \frac{v~e}{g} \]
+\end{definition}
+which is just the exhaust velocity normalised by the gravitational
+acceleration.
+
+\begin{example}[A simple rocket]
+  Consider the third stage burn of a rocket, which has an initial
+  velocity $v~i = 2 \e{3}\, \meter\, \second^{-1}$, and contains $4
+  \e{3}\, \kilogram$ of fuel, and has an empty mass of $700\,
+  \kilogram$. The vacuum exhaust speed is $v~e =
+  2930\,\meter\,\second^{-1}$, with
+  $\dot{m}=100\,\kilogram\,\second^{-1}$. \\ How far does the rocket
+  travel during the burn?  The mass ratio is $\frac{4.7}{0.7} =
+  6.71$, so \[ \Delta v = v~e \log(6.71) =
+  55.79\,\meter\,\second^{-1} \] and the burn time is
+\[ \Delta t = \frac{4.7}{0.1 (1 - \frac{0.7}{4.7} )} \approx 40\,\second \]
+Thus \begin{align*} s &= 2930\,\meter\second^{-1} &&\times \frac{4700\,\kilogram}{100\,\kilogram\,\second^{-1}}\\ &&& \times \qty[1 - \frac{1}{6.71} \qty( \log(6.71) + 1 )] \\&= 158.51 \kilo\meter 
+\end{align*}
+\end{example}
+
+\section{Multistaging}
+\label{sec:multistaging}
+
+The structural mass of the rocket is a major source of inefficiency
+during the burn, and one way to reduce its impact is to jettison
+stages of the rocket as the fuel they are carrying is expended. This
+allows a greater speed to be achieved with the same quantity of
+fuel. Modern rockets seldom use more than three stages due to the
+engineering compexity, however.
+
+From the rocket equation (\ref{eq:rocket-equation}), we have
+\[ v(t) = v~E \log( \frac{M_0}{M} ) + v~i \] for $M_0$ the initial
+mass of the rocket, and $M$ its final mass, while $v~i$ is its
+velocity at the start of the burn. For a single stage rocket the
+velocity boost will be
+\[ v(t) = v~E \log(R_0) \]
+where 
+\[ R_0 = \frac{M~S + M~f + M~p}{M~s + M~p} \] for $M~S$, $M~f$, and
+$M~p$ respectively the masses of the structure, fuel, and payload.
+
+If the rocket is composed of two stages with equal mass,
+\[ v(t) = v~E \log(R_1) + v~E \log(R_2) \] which is larger than the
+total speed achievable using a single-stage rocket.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
