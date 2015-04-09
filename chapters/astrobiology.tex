@@ -1,0 +1,84 @@
+In order to determine which planets, and what conditions, are likely
+to support life we need a firm concept of the concept of life.
+
+\section{Life}
+\label{sec:life}
+
+Terrestrial life is based on a number of organic molecules, composed
+primarily from hydrogen, carbon, oxygen, and nitrogen. These include
+fatty acids, carbohydrates, and amino acids. These elements are fairly
+abundant in the universe: hydrogen exists as a result of the big bang,
+oxygen is synthesised in core-collapse supernovae, and carbon and
+nitrogen (and oxygen) are synthesised in the CNO process. As we know
+it, life also requires a terrestrial planet with liquid water. This
+requires a temperature in the range $270$ to $370\,\kelvin$, and a
+sufficiently high atmospheric pressure to support it.
+
+\section{Equilibrium temperature}
+\label{sec:equil-temp}
+
+The emission of stars and planets can be approximated as blackbody
+radiation, so, the flux from a body at temperature $T$ is
+\begin{equation}
+  \label{eq:52}
+  F = \sigma T^4
+\end{equation}
+for $\sigma$ the Stefan-Boltzmann constant, the total radiative power
+is then
+\begin{equation}
+  \label{eq:53}
+  P = 4 \pi R~p^2 \sigma T^4~p
+\end{equation}
+and a planet at a distance $r~p$ absorbs
+\begin{equation}
+  \label{eq:54}
+  P = (1-A) \pi R~p^2 \qty( \frac{R_{\odot}}{r~p} )^2 \sigma T^4_{\odot}
+\end{equation}
+for an albedo, $A$, of the planet. Equating these,
+\begin{equation}
+  \label{eq:55}
+  T~p = (1-A)^{\frac{1}{4}} \qty( \frac{R_{\odot}}{2 r~p} )^{\half} T_{\odot} \approx 279 (1-A)^{\frac{1}{4}} r~p^{-\half}
+\end{equation}
+So, for a general star of luminosity $L$,
+\begin{equation}
+  \label{eq:56}
+  T~p = \qty( \frac{(1-A)L}{16 \pi \sigma r~p^2} )^{\frac{1}{4}}
+\end{equation}
+
+\section{The greenhouse effect}
+\label{sec:greenhouse-effect}
+
+The greenhouse effect can be incorporated by adding a term $\Delta T$
+to equation (\ref{eq:56}). This is a result of the absorption of
+infrared radiation which heats the atmosphere and in turn the surface
+of the planet.
+
+\section{Albedo}
+\label{sec:albedo-1}
+
+The terrain and atmosphere contribute strongly to the albedo of a
+planet. For example for snow $A \approx 0.8$.
+
+\section{Stability of the atmosphere}
+\label{sec:stability-atmosphere}
+
+A gas in thermodynamic equilibrium has a Maxwellian distribution of
+velocities,
+\[ F(v) \dd{v} \propto \exp( - \frac{m v^2}{2 kT} ) v^2 \dd{v} \]
+and an average kinetic energy per particle
+\[ \ev{T} = \frac{m}{2} \ev{v^2} = \frac{3 kT}{2} \]
+so a root mean square velocity
+\[ \ev{v^2}^{\half} = \qty(\frac{3kT}{m})^{\half} \] The escape
+velocity of a planet is
+\[ v~e = \sqrt{\frac{2GM}{R}} \]
+so to retain an atmosphere in the long term 
+\begin{equation}
+  \label{eq:57}
+  T \le \frac{GMm}{150 k R} 
+\end{equation}
+for a species of mass $m$, and assuming that the $v~e > 10 v~{rms}$.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
