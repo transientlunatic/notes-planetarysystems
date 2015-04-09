@@ -34,7 +34,7 @@ centrifugal force per unit mass of the gas is then $j^2/r^3$, for $r$
 the distance from the axis, and so the elements are balanced within a
 disk.
 
-\section{Evolution of  astellar nebula}
+\section{Evolution of  a stellar nebula}
 \label{sec:evol-astell-nebula}
 
 Consider the condition for centrifugal balance,
@@ -115,6 +115,164 @@ surface density, $\Sigma = 2 H \rho$. The settling time is then
 For $\Sigma \sim 10^3\,\kilogram\,\meter^{-2}$, $\rho~g \sim
 10^3\,\kilogram\,\meter^{-3}$, $a = 10^{-5}\,\meter$, we get $10^4$
 orbits, or $10^5$ years at a distance $5\,\text{AU}$.
+
+\section{The formation of planetessimals}
+\label{sec:form-plan}
+
+Dust particles collide and coalesce in the midplane of the disk, and
+in the time scale of the settling time they grow into objects with a
+radius of between $1$ and $1000\,\kilo\meter$, at which point the
+gravitational effect of the objects becomes significant. Each
+planetessimal will sweep up material about a radius $r$, and so
+accrete matter at a rate
+\begin{equation}
+  \label{eq:46}
+  \dv{m~c}{t} = v_0 n m \pi r^2
+\end{equation}
+for particles of initial velocity $v_0$, number density $n$, and mass
+$m$. By conservation of energy,
+\begin{align*}
+  \half m v_0^2 &= \half mv^2 - \frac{Gm~c m}{R~c} \\ 
+v^2 &= v_0^2 + \frac{2 G m~c}{R~c} \\
+v &= \sqrt{v_0^2 + \frac{2G m~c}{R~c}} \\
+\dv{m~c}{t} &= v_0 n m \pi R~c^2 \qty( 1 + \frac{2 G m~c}{R~c v_0^2} )
+\end{align*}
+
+The timescale for the planetesimal to double its mass is
+\begin{equation}
+  \label{eq:47}
+  \tau~{double} = m~c \qty( \dv{m~c}{t})^{-1}
+\end{equation}
+From the previous expression we can see when $Gm~c / R \approx v_0^2$,
+this is proportional to $m~c^{1/3}$, and so smaller planetesimals grow
+faster than large ones, and we have orderly growth. However, when
+$Gm~c / R~c \gg v_0^2$ the gravitational force domiantes and $\tau~c
+\propto m~c^{-1/3}$, and we have runaway growth.
+
+\section{Isolation mass}
+\label{sec:isolation-mass}
+
+The next consideration is how large a planetary embryo can grow by
+accreting other planetesimals. To find this, define an annulus of
+half-width
+\[ \Delta a~{max} = C R~{Hill} \] for $R~{Hill}$ the radius of the
+Hill sphere where the embryo's gravitational influence dominates its
+parent star, with
+\begin{equation}
+  \label{eq:48}
+  R~{Hill} = a \qty( \frac{m~c}{3 M_{*}} )^{\frac{1}{3}}
+\end{equation}
+The isolation mass, where accretion stops, with $\Sigma~s$ the surface density of planetesimals, and $a$ the semimajor axis of the orbit, is
+\begin{equation}
+  \label{eq:49}
+  m~{iso} = 2 \pi a \Sigma~s \Delta a~{max}
+\end{equation}
+Substituting in the half-width
+\begin{align*}
+  m~{iso} &= 2 \pi a \Sigma~s \Delta a~{max} \\
+&= 2 \pi a \Sigma~s C a \qty( \frac{m~{iso}}{3 M_{*}} )^{1/3} \\
+&= \sqrt{8 \pi^3} a^3 \Simga~s^{\frac{3}{2}} C^{\frac{3}{2}} \qty( 3 M_{*})^{- \frac{1}{2}}
+\end{align*}
+Them, taking $C=2 \sqrt{3}$, $\Sigma~s = 100\,\kilo\gram\,\meter^{-2}$
+at $a = 1\,\text{AU}$, $m~{iso} = 0.07 M~E$. Thus terrestrial planets
+did not form simply by embryos accreting matter, but this model is in
+line with the estimated core masses of Saturn, Neptune, and
+Uranus. For terrestrial planets the perturbations of the outer planets
+are likely to have been significant.
+
+\section{Formation of gas giants}
+\label{sec:formation-gas-giants}
+
+The core accretion model for gas giant formation is favoured, but a
+second, gravitational instability model also exists.
+
+\subsection{Core accretion}
+\label{sec:core-accretion}
+
+In the core accretion model a gas giant starts as the rock and ice
+planetary embryo considered in the previous model, but this core
+becomes so large that it is capable of supporting a gas envelope,
+which remains at hydrostatic equilibrium until it reaches a critical
+mass (around $15\,M~E$), after which it contracts on the
+Kelvin-Helmholtz timescale (around $10^6$ years). After this a phase
+of rapid gas accretion occurs until the planet is sufficiently massive
+to open a gap in the protoplanetary disk. Radial planetary migration
+can change the timescale of this process however.
+
+The critical mass can be found from the relation
+\begin{equation}
+  \label{eq:50}
+  \frac{M~{crit}}{M~E} \approx 12 \qty( \frac{\dot{M}~{core}}{10^{-6}\,M~e/\text{year}} )^{\frac{1}{4}} \qty( \frac{\kappa~R}{1\,\centi\meter\,\gram^{-1}} )^{\frac{1}{4}}
+\end{equation}
+for $\kappa~R$ the Rosseland mean opacity across all frequencies,
+weighted by a Planckian distribution.
+
+\subsection{Gravitational instability model}
+\label{sec:grav-inst-model}
+
+In this model the self-gravity of the gas in the protoplanetary disk
+is sufficient to cause the disk to fragment and form clusters which
+can then form gas giants. For this to work a high surface density is
+required, which is most likely to occur early in the evolution of the
+disk, and there are doubts as to whether there is sufficient time for
+gas giants to form in this period. This model also favours the
+formation of the planets at large radii (50 to 100\,AU).
+
+For a rotating disk the Toomre $Q$-parameter quantifies the stability
+of a system; for gravitational instability 
+\[ Q \equiv \frac{c~s \Omega}{\pi G \Sigma} \lesssim 1 \] Taking the
+speed of sound to be $c~s \simeq 0.5\,\kilo\meter/\second$ we would
+require $\Sigma \approx 1.4\e{3}\,\gram\,\centi\meter^{-2}$. Assuming
+a characteristic wavelength for a gravitational instability to be
+\[ \lambda~{crit} = \frac{2 c~s^2}{G \Sigma} \]
+then the mass of objects formed through disk fragmentation would be 
+\[ M~p \sim \pi \Sigma \lambda~{crit}^2 \sim \frac{4 c~s^4}{G^2
+  \Sigma} \sim 3\,M~J \] Approaching the point of fragmentation the
+disk is likely to start forming spiral arms due to differential
+rotation, allowing heat to transfer through the gas faster, increasing
+the sound speed, and transferring angular momentum, leading to a lower
+surface density. This the cooling time is an important
+consideration. For the annulus of the disk the Kelvin-Helmholtz time
+scale is
+\[ t~{cool} = \frac{U}{2 \sigma T~{disk}^4} \] for $U$ the thermal
+energy per unit surface area of the disk. If the cooling time is less
+than the rotation period the heat can be radiated away and the disk is
+likely to collapse.
+
+\section{Planetary migration}
+\label{sec:planetary-migration}
+
+Planets will not necessarily remain in the orbits they formed in, and
+orbits can change due to perturbations from larger planets,
+interactions with planetesimals, and mutual interactions between
+planets within the system.
+
+As the newly formed planet interacts with the gas disk the gas can
+develop vorticity, producing waves of higher gas density. These can
+impart angular momentum on a planet if the have the same frequency as
+the planet's gravitational potential, setting up a resonance. Density
+waves from behind will exert a torque on the planet greater than the
+torque from waves within the planet's orbit, forcing it into a lower
+orbit. This is type I gas disk migration.
+
+Type II gas disk migration occurs when high-mass planets interact
+tidally with the gas disk as they accrete material. This tidal force
+strongly perturbs the disk, and the exchange of angular momentum
+between the planet and disk repels gas from the orbit, sweeping out an
+annular gap in the gas disk. The planet will now move radially inward
+as it accretes matter, and stops when it reaches the inner edge of the
+gap. When a planet is large enough to open a gap orbital evolution
+will occur; the radial velocity of the gas disk is
+\[ v~r = -\frac{\dot{M}}{2 \pi r \Sigma} \] If there i a tidal barrier
+on the outer edge of the gap the evolution of the disk will cause the
+orbit to shrink provided that the local disk mass exceeds the planet's
+mass. The rate of orbital shrinkage is equal to the radial velocity,
+so the timescale is
+\begin{equation}
+  \label{eq:51}
+  \tau_0 = \frac{2}{3 \alpha} \qty( \frac{h}{r} )^{-2} \Omega^{-1}
+\end{equation}
+
 
 %%% Local Variables: 
 %%% mode: latex
