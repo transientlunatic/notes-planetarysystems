@@ -92,6 +92,95 @@ So the optimal $R = R~C$ satisfies
 \end{equation}
 so $R~C \approx 4.9$.
 
+It is also important that the payload obtains a horizontal speed in
+order to remain in orbit. This requires an inclined launch, with two
+components of motion,
+\[
+\dv{v_z}{t} = \frac{F \sin(\theta)-Mg}{M}, \qquad \dv{v_x}{t} = \frac{F \cos(\theta)}{M} 
+\]
+for $\theta$ the pitch angle from $\theta=0$ horizontal. Thus
+\begin{align*}
+v_z(t) &= v~E \sin(\theta) \log( \frac{M~0}{M~E} ) - gt \\ v_x(t) &= v~E \cos(\theta) \log(\frac{M_0}{M})
+\end{align*}
+assuming $v(0)=0$. The total speed of the rocket is then
+\begin{align*}
+ v(t) &= \sqrt{v^2_x + v^2_z} \\ &= \qty( v~E^2 \qty( \log(\frac{M_0}{M}))^2 - 2 v~E g t \sin(\theta) \log( \frac{M_0}{M}) + g^2 t^2 )^{\half} 
+\end{align*}
+
+The path angle of the flight is related to the ratio of the vertical
+to the horizontal velocity, so
+\begin{align*} \tan(\gamma) &= \frac{v~E \sin(\theta) \log(\frac{M_0}{M})-gt}{v~E \cos(\theta) \log(\frac{M_0}{M})} \\
+&= \tan(\theta) - \frac{gt}{v~E \cos(\theta) \log( \frac{M_0}{M})} \\
+& \approx \tan(\theta) - \frac{g M_0}{v~E \dot{M} \cos(\theta)} \quad \text{early in flight}
+\end{align*}
+
+We can define the angle of attack as the angle between the thrust and
+the flight path, which tends to zero as the burn progresses.
+
+The drag, $F~D$, and lift, $F~L$, are
+\[ F~D = C~D A \frac{\rho v^2}{2}, \qquad F~L = C~L A \frac{\rho v^2}{2} \]
+where 
+\[ \frac{\rho v^2}{2} \] is the dynamic pressure, $C~D$ the drag
+coefficient, $C~L$ the lift coefficient, and $A$ the cross-sectional
+area.
+
+
+\section{The gravity turn}
+\label{sec:gravity-turn}
+
+A gravity turn is used to rotate the angle of a trajectory using the
+gravitational effect of the Earth. Consider the equations from earlier for a constant pitch angle, but substitute the flight path angle, $\gamma$ for the pitch angle, $\theta$, so
+\begin{align*}
+  \dv{v_z}{t} &= \frac{F}{M} \sin(\gamma) - g = \frac{F}{M} \frac{v_z}{v} -g \\
+\dv{v_x}{t} &= \frac{F}{M} \cos(\gamma) =\frac{F}{M} \frac{v_x}{v}
+\end{align*}
+then multiplying each by their respective velocities, and summing them,
+\[ v_z \dv{v_z}{t} + v_x \dv{v_x}{t} = v \dv{v}{t} = \frac{F v}{M} - gv_z \]
+Then, the expression for $v$ becomes
+\[ \dv{v}{t} = \frac{F}{M} - g \frac{v_z}{v} = \frac{F}{M} - g \sin(\gamma) \]
+Multiplying $\dv{v_x}{t}$ by $v_z$ and vice versa, then subtracting one from the other,
+\[ v_x \dv{v_z}{t} - v_z \dv{v_x}{t} = - g v_x \]
+Since $\tan(\gamma) = v_z / v_x$,
+\[ \dv{t} \tan(\gamma) = \frac{\dot{v}_z}{v_x} - \frac{v_z \dot{v}_x}{v_x^2} = \frac{v_x \dot{v}_z - v_z \dot{v}_x}{v_x^2} \]
+and the left hand side can be rewritten
+\[ \dot{\gamma} (1-\tan[2](\gamma) ) = \dot{\gamma} \qty( 1+ \frac{v_z^2}{v_x^2} ) = \dot{\gamma} \frac{v^2}{v^2_x} \]
+Thus, combined,
+\[ \dv{\gamma}{t} = - \frac{g v_x}{v^2} = - \frac{g}{v} \cos(\gamma) \]
+
+The equations governing the flight path are non-linear, so some
+simplifications are required to solve them.
+
+\section{A uniformly changing path angle}
+\label{sec:unif-chang-path}
+
+Suppose $\dot{\gamma} = -C$ is constant, so $\gamma$ changes uniformly
+with time. Then
+\[ C = \frac{g}{v} \cos(\gamma) \]
+so
+\[ \dot{v} = - \frac{g}{C} \sin(\gamma) \dot{\gamma} = g \sin(\gamma) \]
+Thus
+\[ \dot{v} = \frac{F}{M} - \dot{v} \implies 2 \dot{v} = \frac{F}{M} \]
+So
+\[ \dot{v} = \frac{F}{2M} = \half v~E \frac{\dot{M}}{M} \]
+which has a solution
+\[ v(t) = v_0 + \half v~E \log(\frac{M_0}{M}) \]
+Which, given $\cos(\gamma) = Cv/g$,
+\begin{equation}
+  \label{eq:58}
+  \cos(\gamma(t)) = \cos(\gamma_0) + C \frac{v~E}{2 g} \log(\frac{M_0}{M})
+\end{equation}
+
+\section{Orbital injection}
+\label{sec:orbital-injection}
+
+Once the atmosphere is sufficiently tenuous orbital injection can
+occur, with the perigee of the orbit an important deciding parameter.
+For a circular orbit,
+\[ v = \sqrt{\frac{GM}{R}+h} \]
+and for a parabolic orbit
+\[ v = \sqrt{\frac{2GM}{R} + h} \] with everything in between being an
+elliptical orbit.
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../project"
